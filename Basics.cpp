@@ -1,33 +1,52 @@
 
-#include <iostream> //This console output is supposed to show the result of 2+2 equation
+#include <iostream>
 
-using namespace std;  //access to whole std namespace throughout your code.
+using namespace std;
 
 main()
 {
-    int a = 4; // declaration, defining, initialization
-    // because of initialization compiler will use 4 bytes for int data type
-    char var = 'x';
-    // & (ampersand). &name_of_variable
-    cout << a << endl;
-    cout << &a << endl; // sending number 4 into console output
-    // endl - end of the line
+    int a = 10, b = 0, c = 30; // allocating 4 bytes
+    cout << "a : " << a << " Address is: " << &a <<endl;
+    cout << "b : " << b << " Address is: " << &b <<endl;
+    cout << "c : " << c << " Address is: " << &c <<endl;
 
-    a = 10; // changing the value
-    cout << a << endl;
-    cout << &a << endl;
+    short int t1;       // allocating 2 bytes
+    //short t1;         // the same as short int
+
+    t1 = 5;
+    cout << t1 << endl;
+
+    float t2 = 5.12;    // 4 bytes of memory
+    double t3 = 10.12;  // 8 bytes of memory. double float
+    cout << t2 << endl;
+    cout << t3 << endl;
+
+    char t4;    // character
+    t4 = 'a';
+    cout << t4 << endl;
+
+    string t5 = "Hello World!\n";
+    cout << t5 << endl;
+
+    string x = "part1";
+    string y = "part2";
+    string combineStrings = x+y;
+    cout << combineStrings << endl;
+
+    // boolean True or False
+    bool t6 = true;
+    cout << t6 << endl;
+
+    unsigned short int t7 = 54000; // 2 bytes
+    cout << t7 << endl;
+
+    const string NAME_OF_GAME = "C++"; // const means we can't change it
+    cout << NAME_OF_GAME << endl; // const variable names are in capital letters
+
+    cout << "\n" << "Practicing the calculations" << "\n";
+    cout << "5/2= " << 5/2 << "\n";
+    cout << "5.0/2= " << 5.0/2 << "\n";
 
 
-    /*
-    Rules of naming variables:
-    1. Variable can't have the same name;
-    2. Can't start the name of variable with number;
-    3. Can't use spaces in the name of variables;
-    4. Variable name should be self descripted;
-    5. Can't use special characters;
-    6. Variables should be nouns.
 
-
-
-    */
 }
