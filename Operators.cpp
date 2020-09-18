@@ -1,26 +1,30 @@
 # include <iostream>
 
 using namespace std;
-//relational operators
+
 
 main()
 {
-    /*
-        AND conjuction &&
+    //Ex.1
 
-    */
+    int minVal, valueToCheck, maxVal;
+    //bool isGreaterEqualMinNumber, isLowerEqualMaxNumber;
+    bool isWithinInterval;
 
-    cout << ( 7 > 5 && 1 != 10 ) << endl;
+    cout << "Minimum value: ";
+    cin >> minVal;
+    cout << "Maximum value: ";
+    cin >> maxVal;
+    cout << "Value to check: ";
+    cin >> valueToCheck;
 
-    /*
-        OR disjunction ||   (alternative)
-    */
+    //isGreaterEqualMinNumber = (valueToCheck >= minVal);
+    //isLowerEqualMaxNumber = (valueToCheck <= maxVal);
+    isWithinInterval = (valueToCheck >= minVal) && (valueToCheck <= maxVal);
 
-    cout << (7 < 5 || 1 == 10) << endl;
+    cout << "Is the value " << valueToCheck << " contained in the interval from " << minVal <<
+            " to " << maxVal << " ? " << isWithinInterval << endl ;
+    //cout << "Is the value " << valueToCheck << " lower ot equal to " << maxVal << " ? " << isLowerEqualMaxNumber << endl;
+    system ("pause");
 
-    /*
-        XOR ^ Exclusive OR
-    */
-
-    cout << (7 > 5 ^ 1 != 10) << endl;
 }
