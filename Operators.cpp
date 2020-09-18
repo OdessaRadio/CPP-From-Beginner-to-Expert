@@ -5,15 +5,22 @@ using namespace std;
 
 main()
 {
-    int a = 9;
-    int b = 10;
+    int minVal, valueToCheck, maxVal;
+    bool isGreaterEqualMinNumber, isLowerEqualMaxNumber;
 
-    cout << (a == b) << endl; //== represent equality
-    cout << (a != b) << endl; //!= is not equel
-    cout << (a > b) << endl; //
-    cout << (a < b) << endl; //
-    cout << (a >= b) << endl; //
-    cout << (a <= b) << endl; //
-    cout << !(a == b) << endl
+    cout << "Minimum value: ";
+    cin >> minVal;
+    cout << "Maximum value: ";
+    cin >> maxVal;
+    cout << "Value to check: ";
+    cin >> valueToCheck;
+
+    isGreaterEqualMinNumber = (valueToCheck >= minVal);
+    isLowerEqualMaxNumber = (valueToCheck <= maxVal);
+
+    cout << "Is the value " << valueToCheck << " greater ot equal to " << minVal << " ? " << isGreaterEqualMinNumber << endl;
+    cout << "Is the value " << valueToCheck << " lower ot equal to " << maxVal << " ? " << isLowerEqualMaxNumber << endl;
+
+    system ("pause");
 
 }
