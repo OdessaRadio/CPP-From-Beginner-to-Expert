@@ -5,22 +5,22 @@ using namespace std;
 
 main()
 {
-    int minVal, valueToCheck, maxVal;
-    bool isGreaterEqualMinNumber, isLowerEqualMaxNumber;
+    /*
+        AND conjuction &&
 
-    cout << "Minimum value: ";
-    cin >> minVal;
-    cout << "Maximum value: ";
-    cin >> maxVal;
-    cout << "Value to check: ";
-    cin >> valueToCheck;
+    */
 
-    isGreaterEqualMinNumber = (valueToCheck >= minVal);
-    isLowerEqualMaxNumber = (valueToCheck <= maxVal);
+    cout << ( 7 > 5 && 1 != 10 ) << endl;
 
-    cout << "Is the value " << valueToCheck << " greater ot equal to " << minVal << " ? " << isGreaterEqualMinNumber << endl;
-    cout << "Is the value " << valueToCheck << " lower ot equal to " << maxVal << " ? " << isLowerEqualMaxNumber << endl;
+    /*
+        OR disjunction ||   (alternative)
+    */
 
-    system ("pause");
+    cout << (7 < 5 || 1 == 10) << endl;
 
+    /*
+        XOR ^ Exclusive OR
+    */
+
+    cout << (7 > 5 ^ 1 != 10) << endl;
 }
