@@ -5,32 +5,72 @@ using namespace std;
 
 main()
 {
-//Ex.1
-/*
-    int personAge;
+    double var1, var2;
 
-    cout << "Enter your age" << endl;
-    cin >> personAge;
-    cout << ((personAge>=18) ? "Your age is higher or equal to 18" : "Your age is lower than 18") << endl;
-*/
+    beginning: //label beginning
+    system ("cls");
+
+    cout << "Enter number 1 " << endl;
+    cin >> var1;
+
+    cout << "Enter number 2 " << endl;
+    cin >> var2;
+
+    cout << "Select the operation" << endl;
+
+    cout << "+ add" << endl;
+    cout << "- substract" << endl;
+    cout << "* multiply" << endl;
+    cout << "/ divide" << endl;
+
+    char operation;
+
+    cin >> operation;
+
+    system ("cls");
+
+    switch (operation)
+        {
+        case '+':
+            cout << var1 << " + " << var2 << " = "<< (var1+var2) << endl;
+            break;
+
+        case ('-'):
+            {
+            cout << var1 << " - " << var2 << " = "<< (var1-var2) << endl;
+            break;
+            }
+
+        case ('*'):
+            {
+            cout << var1 << " * " << var2 << " = "<< (var1*var2) << endl;
+            break;
+            }
+
+        case ('/'):
+            {
+            if (var2) // var!=0
+                {
+                cout << var1 << " / " << var2 << " = "<< (var1/var2) << endl;
+                break;
+                }
+            else
+                {
+                cout << "Can't divide by 0" << endl;
+                }
+            }
+
+        default:
+            cout << "you have entered the wrong number" << endl;
+        }
+
+        char selection;
+        cout << "Do you want to run again? (Y/N)";
+        cin >> selection;
+
+        if (selection == 'y' || selection == 'Y')
+            goto beginning; // go to beginning
 
 
-//Ex.2
-    int examPoints;
-
-    cout << "Enter the number of points received on the exam ";
-    cin >> examPoints;
-
-    if ((examPoints>=0) && (examPoints <= 100))
-    {
-        string outputMessage = (examPoints >= 50)
-                                ?"Exam was passed"
-                                :"You didn't pass the exam!";
-        cout << outputMessage;
-    }
-    else
-    {
-        cout << "ERROR. The number of points is invalid !" << endl;
-    }
 
 }
