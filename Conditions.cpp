@@ -2,56 +2,111 @@
 
 using namespace std;
 
+
 main()
 {
-    int a = 10, b = 10;
+//Ex.1
+    /*
+    int minVal, valueToCheck, maxVal;
+    //bool isGreaterEqualMinNumber, isLowerEqualMaxNumber;
+    bool isWithinInterval;
 
-    if ( a > b )
-    {
-        cout << "a > b" << endl;
-    }
-    else if ( a < b )
-    {
-        cout << "a < b" << endl;
-    }
+    cout << "Minimum value: ";
+    cin >> minVal;
+    cout << "Maximum value: ";
+    cin >> maxVal;
+    cout << "Value to check: ";
+    cin >> valueToCheck;
 
-    else
+    if (valueToCheck >= minVal && valueToCheck <= maxVal)
     {
-        cout << " a = b " << endl;
-    }
-/*
-    cout << "Enter a: ";
-    cin >> a;
-    cout << "Enter b: ";
-    cin >> b;
-*/
-/*
-    if (a > b)
-        cout << a << " > " << b << endl;
-*/
-/*
-    if (4 > 7)
-    {
-        cout << "something\n";
+        cout << "The number " << valueToCheck << " belongs to the interval from " << minVal << " to "
+            << maxVal << endl;
     }
     else
     {
-        cout << "test\n";
+        cout << "The number " << valueToCheck << " doesn't belong to the interval from " << minVal << " to "
+            << maxVal << endl;
     }
 
-    if (1)
+    system ("pause");
+    */
+
+//Ex. 2
+    /*
+    int minVal, valueToCheck, maxVal;
+    //bool isGreaterEqualMinNumber, isLowerEqualMaxNumber;
+    bool isWithinInterval;
+
+    cout << "Minimum value: ";
+    cin >> minVal;
+    cout << "Maximum value: ";
+    cin >> maxVal;
+
+    if (maxVal > minVal)
     {
-        cout << "The condition is not equal to ZERO\n";
-    }
+        cout << "Value to check: ";
+        cin >> valueToCheck;
 
-    if (3 < 5 || 4 > 6 && 10 == 9)
+        bool isContained = (valueToCheck >= minVal) && (valueToCheck <= maxVal);
+
+        if (isContained)
+        {
+            cout << "The number " << valueToCheck << " belongs to the interval from " << minVal << " to "
+                << maxVal << endl;
+        }
+        else
+        {
+            cout << "The number " << valueToCheck << " doesn't belong to the interval from " << minVal << " to "
+                << maxVal << endl;
+        }
+
+    }
+    else
     {
-        cout << "Conditional 1\n";
+        cout << "Error. Maximum value cannot be lower than the minimum value" << endl;
     }
+    */
 
-*/
+//Ex. 3
+    int productSelection;
 
+    cout << "Select the product: input appropriate number." << endl;
+    cout << "1. Cola" << endl;
+    cout << "2. Pepsi" << endl;
+    cout << "3. Fanta" << endl;
+    cout << "4. Sprite" << endl;
+    cout << "5. Mirinda" << endl;
+    cout << "6. 7Up" << endl;
 
+    cin >> productSelection;
 
-
+    if (productSelection == 1)
+    {
+        cout << "Your have chosen a Cola" << endl;
+    }
+    else if (productSelection == 2)
+    {
+        cout << "Your have chosen a Pepsi" << endl;
+    }
+    else if (productSelection == 3)
+    {
+        cout << "Your have chosen a Fanta" << endl;
+    }
+    else if (productSelection == 4)
+    {
+        cout << "Your have chosen a Sprite" << endl;
+    }
+    else if (productSelection == 5)
+    {
+        cout << "Your have chosen a Mirinda" << endl;
+    }
+    else if (productSelection == 6)
+    {
+        cout << "Your have chosen a 7Up" << endl;
+    }
+    else
+    {
+        cout << "Error. Invalid choice." << endl;
+    }
 }
