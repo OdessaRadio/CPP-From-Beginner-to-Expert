@@ -70,6 +70,7 @@ main()
 
         if (selection == 'y' || selection == 'Y')
             goto beginning; // go to beginning
+            cout << "End of program";
 
 
 
