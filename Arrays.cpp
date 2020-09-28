@@ -3,28 +3,20 @@
 using namespace std;
 
 //ARRAYS
+//Ex.1
 main()
 {
-    double storeArray[4];
-    double storeArraySum;
+    int x,y;
+    int wArray[3][4] = {{1,  2,  3,  4},
+                        {5,  6,  7,  9},
+                        {10, 11, 12, 14}};
 
-    cout << "Please, enter 4 numbers" << endl;
+    cout << "Please, set the position of the element to show x,y" << endl;;
+    cout << "Set x position: ";
+    cin >> x;
+    cout << "Set y position: ";
+    cin >> y;
 
-    cout << "Enter 1st number " ;
-    cin >> storeArray[0];
-    cout << "Enter 2nd number " ;
-    cin >> storeArray[1];
-    cout << "Enter 3rd number " ;
-    cin >> storeArray[2];
-    cout << "Enter 4th number " ;
-    cin >> storeArray[3];
-
-    storeArraySum = storeArray[0] + storeArray[1] + storeArray[2] + storeArray[3];
-
-    cout << "Result = " << storeArraySum << endl;
-    cout << "Address of first element = " << storeArray << endl;
-    cout << "Address of first element = " << &storeArray[0] << endl;
-    cout << "Address of last element = " << &storeArray[3] << endl;
-
+    cout << "Selected array value is: " << wArray[x-1][y-1] << endl;
 
 }
