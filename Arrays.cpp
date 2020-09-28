@@ -5,32 +5,26 @@ using namespace std;
 //ARRAYS
 main()
 {
-    const int n = 100;
+    double storeArray[4];
+    double storeArraySum;
 
-    int x[n];
-    int a;
-//    int testArray[4] = {1,2,3,4};
-//
-//    cout << &(testArray[0]) << endl;
-//    cout << &(testArray[1]) << endl;
-//    cout << &(testArray[2]) << endl
+    cout << "Please, enter 4 numbers" << endl;
 
-    int testArray[4]; //type array name [number of elements]
-    testArray[0] = 10;
-    testArray[1] = 50;
-    testArray[2] = 256;
-    testArray[3] = 128;
+    cout << "Enter 1st number " ;
+    cin >> storeArray[0];
+    cout << "Enter 2nd number " ;
+    cin >> storeArray[1];
+    cout << "Enter 3rd number " ;
+    cin >> storeArray[2];
+    cout << "Enter 4th number " ;
+    cin >> storeArray[3];
 
-    cout << testArray[0] << " address is: " << &testArray[0] << endl;
-    cout << testArray[1] << " address is: " << &testArray[1] << endl;
-    cout << testArray[2] << " address is: " << &testArray[2] << endl;
-    cout << testArray[3] << " address is: " << &testArray[3] << endl;
+    storeArraySum = storeArray[0] + storeArray[1] + storeArray[2] + storeArray[3];
 
-    cout << testArray[3] << " address is: " << testArray << endl;
-
-    if (&testArray[0]==testArray)
-        cout << "True";
-
+    cout << "Result = " << storeArraySum << endl;
+    cout << "Address of first element = " << storeArray << endl;
+    cout << "Address of first element = " << &storeArray[0] << endl;
+    cout << "Address of last element = " << &storeArray[3] << endl;
 
 
 }
