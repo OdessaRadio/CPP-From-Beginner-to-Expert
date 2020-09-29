@@ -5,22 +5,26 @@ using namespace std;
 
 main ()
 {
-    const int SIZEOFARRAY = 10;
-    int i = 0;
-    int array[SIZEOFARRAY];
-/*
-    while(i < SIZEOFARRAY)
-    {
-        array[i] = 10 * i;
-        cout << array[i++] << endl;
-    }
-*/
-    while (i)
-        cout << "KAKA" << endl;
+     int pin, checkPin;
+     int attempts = 5;
 
-    do
-    {
-        cout << "LALA" << endl;
-    } while (i);
+     cout << "Input your pin number for the first time: ";
+     cin >> pin;
+
+     system("cls");
+
+     do
+     {
+        cout << "Input your pin: " << " " << attempts << " tries left ";
+        cin >> checkPin;
+        attempts--;
+        system("cls");
+
+     } while ((checkPin != pin)&&(attempts > 0));
+
+     if (checkPin == pin)
+        cout << "Correct pin, welcome !" << endl;
+     else
+        cout << "You have entered a wrong PIN code for 5 times !";
 
 }
