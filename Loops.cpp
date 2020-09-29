@@ -5,35 +5,31 @@ using namespace std;
 //break and continue
 main ()
 {
-/*
-    for (int i = 1; i <= 10; i++) //amount of rown
-    {
-        if (i==5)
-            continue;
+    int currentValue;
+    int add = 1; //addendum
+    char choice;
 
-        for (int j = 1; j <= 10; j++) //amount of columns
-        {
-            if (j==5)
-                continue;
-            cout.width(4);
-            cout << i * j;
-        }
-        cout << endl;
-    }
-*/
-    for (int i = 1, j = 1; i <= 10; i++)
+    while(1)
     {
-        cout.width(4);
-        cout << i * j;
-        if (i==10)
-        {
-            j++;
-            i = 0;
-            cout << endl;
-        }
-        if (j == 10 + 1)
+        system ("cls");
+        cout << "The current sum is: " << currentValue << endl;
+        cout << "Do you want to add " << add << " ?(Y/N)";
+        cin >> choice;
+
+        if ((choice == 'Y')||(choice == 'y'))
+            {
+            currentValue += add;
+            add++;
+            }
+        else if ((choice == 'N')||(choice == 'n'))
+            {
+            add++;
+            continue;
+            }
+        else
             break;
 
-
     }
+    cout << "Good bye" << endl;
+
 }
