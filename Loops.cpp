@@ -5,27 +5,57 @@ using namespace std;
 //Nested loops
 main ()
 {
-/*
-    int nr = 1234545; //
-    int nrOfDigits = 1;
+//Ex.1
+//Setting up an array
+    char array[3][3];
+    char value = '1';
+    int xCoord, yCoord;
+    bool symbol = true;
+    char playerMark;
 
-//    cout << 1234/10 << endl;
-    int tmp = nr;
-    while(tmp /= 10)
-        nrOfDigits++;
-
-    cout << "the number " << nr << " has " << nrOfDigits << " digits" << endl;
-*/
-
-    for(int i = 1; i <= 10; i++)
-    {
-        for (int j = 1; j <= 10; j++)
+    for (int i = 0; i < 3; i++)
+        for (int j = 0; j < 3; j++)
         {
-            cout.width(5);
-            cout << i * j;
+            array[i][j] = value;
+            value++;
         }
-        cout << endl;
+//Ex.2
+while (true)
+    {
+        if (symbol)
+        {
+            playerMark = 'X';
+        }
+        else
+        {
+            playerMark = 'O';
+        }
 
+        //Printing part
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                cout.width(3);
+                cout << array[i][j];
+            }
+            cout << endl << endl;
+        }
+
+        do
+        {
+            cout << "Select X for " << playerMark << " ";
+            cin >> xCoord;
+            cout << "Select Y for " << playerMark << " ";
+            cin >> yCoord;
+        } while ((xCoord >= 4)&&(yCoord >= 4));
+
+        if ((array[yCoord-1][xCoord-1] != 'X') && (array[yCoord-1][xCoord-1] != 'O'))
+            {
+            array[yCoord-1][xCoord-1] = playerMark;
+
+            }
+        system ("cls");
+        symbol = !symbol;
     }
-
 }
