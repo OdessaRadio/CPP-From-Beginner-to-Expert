@@ -2,29 +2,30 @@
 
 using namespace std;
 
-
+//Nested loops
 main ()
 {
-     int pin, checkPin;
-     int attempts = 5;
+/*
+    int nr = 1234545; //
+    int nrOfDigits = 1;
 
-     cout << "Input your pin number for the first time: ";
-     cin >> pin;
+//    cout << 1234/10 << endl;
+    int tmp = nr;
+    while(tmp /= 10)
+        nrOfDigits++;
 
-     system("cls");
+    cout << "the number " << nr << " has " << nrOfDigits << " digits" << endl;
+*/
 
-     do
-     {
-        cout << "Input your pin: " << " " << attempts << " tries left ";
-        cin >> checkPin;
-        attempts--;
-        system("cls");
+    for(int i = 1; i <= 10; i++)
+    {
+        for (int j = 1; j <= 10; j++)
+        {
+            cout.width(5);
+            cout << i * j;
+        }
+        cout << endl;
 
-     } while ((checkPin != pin)&&(attempts > 0));
-
-     if (checkPin == pin)
-        cout << "Correct pin, welcome !" << endl;
-     else
-        cout << "You have entered a wrong PIN code for 5 times !";
+    }
 
 }
