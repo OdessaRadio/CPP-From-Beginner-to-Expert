@@ -1,61 +1,237 @@
 #include <iostream>
+typedef double dl;
 
 using namespace std;
 /* functions / methods */
 
-int globalVariable;
+/*
+//Ex.1
 
-void welcome(); //declaration of the function
-bool isNumber(string); // no need to declare the name in parameters, only type
-void enterName();
-double add(double a, double b) {return a + b;}
-
-void changeValueTo10 (int x)
-{
-    //int x = a
-    x = 10;
-}
+int addition (int,int);
 
 main()
 {
-    //welcome();
-    //enterName();
-    //cout << add(3,5) << endl;
+    int aNumber, bNumber;
 
-    int a = 5;
-    changeValueTo10(a);
-    cout << a;
+    cout << "Enter number a: ";
+    cin >> aNumber;
+    cout << "Enter number b: ";
+    cin >> bNumber;
+
+    cout << "Result: a + b = " << addition(aNumber, bNumber) << endl;
+}
+
+int addition (int x, int y)
+{
+    return x+y;
+}
+
+*/
+/*
+//Ex.2
+
+int substraction (int,int);
+
+main()
+{
+    int aNumber, bNumber;
+
+    cout << "Enter number a: ";
+    cin >> aNumber;
+    cout << "Enter number b: ";
+    cin >> bNumber;
+
+    cout << "Result: a - b = " << substraction(aNumber, bNumber) << endl;
+}
+
+int substraction (int x, int y)
+{
+    return x-y;
+}
+*/
+/*
+//Ex.3
+
+int multiplication (int,int);
+
+main()
+{
+    int aNumber, bNumber;
+
+    cout << "Enter number a: ";
+    cin >> aNumber;
+    cout << "Enter number b: ";
+    cin >> bNumber;
+
+    cout << "Result: a * b = " << multiplication(aNumber, bNumber) << endl;
+}
+
+int multiplication (int x, int y)
+{
+    return x*y;
+}
+*/
+/*
+//Ex.4
+
+double division (double,double);
+
+main()
+{
+    int aNumber, bNumber;
+
+    cout << "Enter number a: ";
+    cin >> aNumber;
+    cout << "Enter number b: ";
+    cin >> bNumber;
+
+    cout << "Result: a / b = " << division(aNumber, bNumber) << endl;
+}
+
+double division (double x, double y)
+{
+    return x/y;
+}
+*/
+
+/*
+//Ex.6
+
+dl addition (dl, dl);
+dl substraction (dl, dl);
+dl multiplication (dl, dl);
+dl division (dl, dl);
+dl exp (dl, dl);
+
+main()
+{
+    dl aNumber, bNumber; //initial numbers
+    dl res;
+    char opSel;
+
+
+    while (1)
+    {
+        cout << "Enter number a: ";
+        cin >> aNumber;
+        cout << "Enter number b: ";
+        cin >> bNumber;
+        cout << "Please, type the operator to execute: ";
+        cin >> opSel;
+
+        switch (opSel)
+        {
+            case '+' :
+                res = addition(aNumber, bNumber);
+                break;
+            case '-' :
+                res = substraction(aNumber, bNumber);
+                break;
+            case '*' :
+                res = multiplication(aNumber, bNumber);
+                break;
+            case '/' :
+                res = division(aNumber, bNumber);
+                break;
+            case '^':
+                res = exp(aNumber, bNumber);
+                break;
+            default:
+                cout << "You have entered wrong math. operator";
+                res = 0;
+                break;
+        }
+
+        cout << "Result: " << aNumber  << opSel << bNumber <<  " = " << res << endl;
+
+        system ("pause");
+        system ("cls");
+    }
+
 
     return 0;
 }
 
-bool isNumber(string tmp)
+dl addition (dl x, dl y)
 {
-    if (tmp[0]=='O')
-        return false;
+    return x+y;
+}
 
-    for (int i = 0; i < tmp.length(); i++)
+dl substraction (dl x, dl y)
+{
+    return x-y;
+}
+
+dl multiplication (dl x, dl y)
+{
+    return x*y;
+}
+
+dl division (dl x, dl y)
+{
+    return x/y;
+}
+
+dl exp (dl x, dl y)
+{
+    double result = 1;
+
+    for (int i = 1; i < y; i++)
+        result *= x;
+    return result;
+}
+*/
+
+
+
+double minValue(double fNumbers[], int);
+double maxValue(double fNumbers[], int);
+
+
+main ()
+{
+
+    const int ARRAYLENGTH = 5;
+    double fNumbers[5];
+
+    for (int i = 0; i <= ARRAYLENGTH-1; i++)
     {
-        if (!(tmp[i] >= 48 && tmp[i] <= 57))
-            return false;
+        cout << "Enter number " << i << ": ";
+        cin >> fNumbers[i];
     }
-    return true;
+    system ("cls");
+
+    cout << "Inputted numbers are:" << endl;
+    for (int i = 0; i<= ARRAYLENGTH-1; i++)
+    {
+        cout << fNumbers[i] << endl;
+    }
+
+    cout << "The max value of the array is: " << maxValue(fNumbers, ARRAYLENGTH) << endl;
+    cout << "The min value of the array is: " << minValue(fNumbers, ARRAYLENGTH) << endl;
 }
 
-void welcome()
+double minValue (double fNumbers[], int length)
 {
-    cout << "Hello, welcome to our program" << endl;
+
+    double minValue = fNumbers[0];
+
+    for (int i = 1; i < length; i++)
+    {
+        if (minValue > fNumbers[i])
+            minValue = fNumbers[i];
+    }
+    return minValue;
 }
 
-void enterName()
+double maxValue (double fNumbers[], int lenght)
 {
-    string tmp;
+    double maxValue = fNumbers[0];
 
-    cout << "Enter the number: " << endl;
-    cin >> tmp;
-
-    if (isNumber(tmp))
-        cout << "Number is entered properly" << endl;
-    else
-        cout << "Number was not entered properly" << endl;
+    for (int i = 1; i < lenght; i++)
+    {
+        if (maxValue < fNumbers[i])
+            maxValue = fNumbers[i];
+    }
+    return maxValue;
 }
