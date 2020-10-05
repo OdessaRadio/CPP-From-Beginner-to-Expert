@@ -1,107 +1,113 @@
 #include <iostream>
+#define PI 3.14
+
 typedef double dl;
+
+//Loops and functions - exercises
 
 using namespace std;
 
-/* overloading functions */
+void initMenu();
+void menuDecision(int);
 
-/*
-//Ex.1
+double areaCircle(double r);
+double areaSquare(double a);
+double areaRectangle(double a, double b);
+double areaTriangle(double a, double h);
 
-void variableType (int);
-void variableType (double);
-void variableType (string);
-
-main ()
+int main ()
 {
-int intNumber = 10;
-double doubleNumber = 45.6;
-string  stringNumber = "Test string";
+    system ("cls");
 
-variableType(intNumber);
-variableType(doubleNumber);
-variableType(stringNumber);
-}
+    int choice;
+    char cont;
+    do
+    {
+    initMenu();
 
-void variableType (int a)
-{
-   cout << a << " this variable was an integer" << endl;
-}
-void variableType (double a)
-{
-   cout << a << " this variable was an double" << endl;
+    cin >> choice;
 
-}
-void variableType (string a)
-{
-   cout << "\"" << a << "\"" << " this variable was an string" << endl;
-
-}
-*/
-
-//Ex.2
-
-double addition (double, double);
-double addition (double, double, double);
-double addition (double, double, double, double);
-double addition (double, double, double, double, double);
-
-main ()
-{
-    int numberOfNumbers;
-    double numberArray[5] = {0};
-    double result;
+    menuDecision(choice);
 
     do
     {
-    cout << "Enter number of numbers to be added: ";
-    cin >> numberOfNumbers;
-    } while (numberOfNumbers < 2 || numberOfNumbers > 5);
+        cout << "Do you want to continue? (Y/N)" << endl;
+        cin >> cont;
+    } while (cont != 'y' && cont != 'Y' && cont != 'N' && cont != 'n');
 
 
-    for (int i = 1; i <= numberOfNumbers; i++)
-    {
-        cout << "Enter number " << i << " :";
-        cin >> numberArray[i-1];
-    }
 
-    switch (numberOfNumbers)
-    {
-        case 2:
-            result = addition(numberArray[0],numberArray[1]);
-            break;
-        case 3:
-            result = addition(numberArray[0], numberArray[1], numberArray[2]);
-            break;
-        case 4:
-            result = addition(numberArray[0], numberArray[1], numberArray[2],numberArray[3]);
-            break;
-        case 5:
-            result = addition(numberArray[0], numberArray[1], numberArray[2],numberArray[3],numberArray[4]);
-            break;
-    }
+    } while (cont == 'y'|| cont == 'Y');
 
-    cout << "Result is: " << result << endl;
+
 
     return 0;
 }
 
-double addition (double n1, double n2)
+void initMenu()
 {
-    return n1+n2;
+    cout << "Enter option:" << endl;
+    cout << "1. Circle" << endl;
+    cout << "2. Square" << endl;
+    cout << "3. Rectangle" << endl;
+    cout << "4. Triangle" << endl;
 }
 
-double addition (double n1, double n2, double n3)
+void menuDecision(int choise)
 {
-    return n1+n2+n3;
+    double r,a,b,h;
+
+    switch (choise)
+        {
+        case 1:
+            cout << "Enter the radius: " << endl;
+            cin >> r;
+            areaCircle (r);
+            break;
+        case 2:
+            cout << "Enter the side of a square: " << endl;
+            cin >> a;
+            areaSquare (a);
+            break;
+        case 3:
+            cout << "Enter the width and height of a rectangle: " << endl;
+            cin >> a >> b;
+            areaRectangle(a, b);
+            break;
+        case 4:
+            cout << "Enter the base and height of triangle: " << endl;
+            cin >> a >> h;
+            areaTriangle(a ,h);
+            break;
+        default:
+            cout << "No choice made" << endl;
+        }
 }
 
-double addition (double n1, double n2, double n3, double n4)
+double areaCircle (double r)
 {
-    return n1+n2+n3+n4;
+    double result = PI * r *r;
+    cout << "The area of the circle is: " << result << endl;
+    return result;
 }
 
-double addition (double n1, double n2, double n3, double n4 , double n5)
+double areaSquare(double a)
 {
-    return n1+n2+n3+n4+n5;
+    double result = a*a;
+    cout << "The area of the square is: " << result << endl;
+    return result;
+}
+
+double areaRectangle(double a, double b)
+{
+    double result = a*b;
+    cout << "The area of the rectangle is: " << result << endl;
+    return result;
+}
+
+double areaTriangle(double a, double h)
+{
+    double result = a*h;
+    cout << "The area of the triangle is: " << result << endl;
+    return result;
 }
