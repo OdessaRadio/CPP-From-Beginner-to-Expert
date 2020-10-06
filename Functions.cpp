@@ -1,9 +1,12 @@
 #include <iostream>
+#include <limits>
+
+/*
 #define PI 3.14
 
 typedef double dl;
 
-//Loops and functions - exercises
+//validating data
 
 using namespace std;
 
@@ -24,18 +27,18 @@ int main ()
     do
     {
     initMenu();
-
     cin >> choice;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     menuDecision(choice);
 
     do
-    {
+        {
         cout << "Do you want to continue? (Y/N)" << endl;
         cin >> cont;
-    } while (cont != 'y' && cont != 'Y' && cont != 'N' && cont != 'n');
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-
+        } while (cont != 'y' && cont != 'Y' && cont != 'N' && cont != 'n');
 
     } while (cont == 'y'|| cont == 'Y');
 
@@ -110,4 +113,23 @@ double areaTriangle(double a, double h)
     double result = a*h;
     cout << "The area of the triangle is: " << result << endl;
     return result;
+}
+
+*/
+
+using namespace std;
+
+int main ()
+{
+    int number;
+    string mystr;
+
+    cout << "Enter the number: ";
+
+    cin >> number;
+    cin.ignore('a');
+
+    cout << number;
+
+    return 0;
 }
