@@ -1,38 +1,69 @@
-
 #include <iostream>
+
 using namespace std;
 
+/*
+//Ex.1
 
-int & swap(int &, int &); // swap function returns reference value
-
+void setValue(int &);
 
 int main()
 
 {
-    int a = 10;
-    int b = 20;
+    int a;
 
-    int &c = swap (a, b); //&c is a reference to the same address where a is. So a changes
+    setValue(a);
 
-
-    c = 40; // you want to give c a value
-
-
-    cout << "a is equal : " << a << endl;
-    cout << "b is equal : " << b << endl;
-    cout << "c is equal : " << c << endl;
-
-    system("pause");
-    return 0;
+    cout << a << endl;
 
 }
 
-int &swap(int &x, int &y)
+
+void setValue (int &x)
 {
-  int t = x; //t = 10
-  x = y; //x = 20
-  y = t; //y = 10
 
-  return x; // you return the first value
+    cout << "Enter the value: \n";
+    cin >> x;
 
 }
+
+*/
+//Ex.2
+
+void checkIfTheSame(int&, int&);
+
+int main ()
+{
+
+    int a = 4;
+    int b = 3;
+    int c = a;
+    int &d = a; //&d is a reference to a
+
+    checkIfTheSame(a, b);
+    checkIfTheSame(a, c);
+    checkIfTheSame(a, d);
+
+    return 0;
+}
+
+void checkIfTheSame(int &firstVariable, int &secondVariable)
+{
+    if (firstVariable == secondVariable && &firstVariable == &secondVariable)
+    {
+        cout << "The variables are completely the same !";
+    }
+    else if (firstVariable == secondVariable && &firstVariable != &secondVariable)
+    {
+		cout << firstVariable << " " << &firstVariable << endl;
+        cout << secondVariable << " " << &secondVariable << endl;
+        cout << "The variables have got same values but they are different variables !" << endl;
+    }
+    else
+    {
+        cout << firstVariable << " " << &firstVariable << endl;
+        cout << secondVariable << " " << &secondVariable << endl;
+        cout << "The variables are different !" << endl;
+    }
+}
+
