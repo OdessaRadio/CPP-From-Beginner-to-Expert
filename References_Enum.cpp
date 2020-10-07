@@ -3,35 +3,41 @@
 
 using namespace std;
 
+//
+int & swap (int &,int &); // function swap returns the reference
 
 int main ()
 {
-    /*
-    string name = "Cassandra";
-    string &cassie = name;
-    string &cassey = name;
-    string &sandra = name;
+    int a = 10;
+    int b = 20;
 
-    cout << name << " " << &name << endl;
-    cout << cassie << " " << &cassie << endl;
-    cout << cassey << " " << &cassey << endl;
-    cout << sandra << " " << &sandra << endl;
+    int &c = swap(a,b);
 
+    //int &ref = a;
 
+    int t;
 
+    //t = a;
+    //a = b;
+    //b = t;
 
-    return 0;
-    */
-
-    string name = "Oleksandr";
-    string &shurik = name;
-    string &sasha = name;
-    string &sanya = name;
-
-    cout << shurik << " " << &shurik << endl;
-    cout << sasha << " " << &sasha << endl;
-    cout << sanya << " " << &sanya << endl;
+    c = 100;
+    cout << "a: " << a << endl;
+    cout << "b: " << b << endl;
+    cout << "c: " << c << endl;
 
     return 0;
+}
 
+int & swap (int &x, int &y)
+{
+    int t;
+    t = x;
+    x = y;
+    y = t;
+
+    //cout << "x: " << x << endl;
+    //cout << "y: " << y << endl;
+
+    return x;
 }
