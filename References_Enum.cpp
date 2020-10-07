@@ -1,36 +1,37 @@
 #include <iostream>
 
-/*reference variable*/
 
 using namespace std;
 
 
 int main ()
 {
-    string name2 = "Maria";
-    string name = "Agnes";
-
-    cout << "Value of variable: " << name << " address of the variable " << &name << endl;
-
-    const string &nr_6 = name; //&nr_6 is a reference for the name
-    //nr_6 = name2;
-
-    cout << "Value of variable: " << nr_6 << " address of the variable " << &nr_6 << endl;
-
-    name = "Scott";
-
-    cout << "Value of variable: " << name << " address of the variable " << &name << endl;
-    cout << "Value of variable: " << nr_6 << " address of the variable " << &nr_6 << endl;
-
     /*
-    Rules:
-     - Reference variable must be initialized when created
-     - Ref. variable can't change associations / connections
-     - Ref. variable must be the same type as associated variable
-    */
+    string name = "Cassandra";
+    string &cassie = name;
+    string &cassey = name;
+    string &sandra = name;
+
+    cout << name << " " << &name << endl;
+    cout << cassie << " " << &cassie << endl;
+    cout << cassey << " " << &cassey << endl;
+    cout << sandra << " " << &sandra << endl;
 
 
 
 
     return 0;
+    */
+
+    string name = "Oleksandr";
+    string &shurik = name;
+    string &sasha = name;
+    string &sanya = name;
+
+    cout << shurik << " " << &shurik << endl;
+    cout << sasha << " " << &sasha << endl;
+    cout << sanya << " " << &sanya << endl;
+
+    return 0;
+
 }
