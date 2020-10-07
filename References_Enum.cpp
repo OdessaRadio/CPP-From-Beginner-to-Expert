@@ -1,43 +1,38 @@
+
 #include <iostream>
-
-
 using namespace std;
 
-//
-int & swap (int &,int &); // function swap returns the reference
 
-int main ()
+int & swap(int &, int &); // swap function returns reference value
+
+
+int main()
+
 {
     int a = 10;
     int b = 20;
 
-    int &c = swap(a,b);
+    int &c = swap (a, b); //&c is a reference to the same address where a is. So a changes
 
-    //int &ref = a;
 
-    int t;
+    c = 40; // you want to give c a value
 
-    //t = a;
-    //a = b;
-    //b = t;
 
-    c = 100;
-    cout << "a: " << a << endl;
-    cout << "b: " << b << endl;
-    cout << "c: " << c << endl;
+    cout << "a is equal : " << a << endl;
+    cout << "b is equal : " << b << endl;
+    cout << "c is equal : " << c << endl;
 
+    system("pause");
     return 0;
+
 }
 
-int & swap (int &x, int &y)
+int &swap(int &x, int &y)
 {
-    int t;
-    t = x;
-    x = y;
-    y = t;
+  int t = x; //t = 10
+  x = y; //x = 20
+  y = t; //y = 10
 
-    //cout << "x: " << x << endl;
-    //cout << "y: " << y << endl;
+  return x; // you return the first value
 
-    return x;
 }
