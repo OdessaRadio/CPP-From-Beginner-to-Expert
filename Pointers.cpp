@@ -1,84 +1,120 @@
 #include <iostream>
 
+/*Functions and pointers*/
+
 using namespace std;
-/*
-void multiplyBy (int *, int);
 
-int main() {
+// Exercise
 
-    int a = 10;
-    multiplyBy (&a, 5);
-    cout << a << endl;
+int *createArray (int);
+void swapTwoValues (int *, int *);
+void fillArrayWithValues (int [], int);
+void printArrayValues (int [], int);
+void bubbleSort (int [], int, bool);
+void selectionSort (int [], int, bool);
 
-    return 0;
-}
+int main (){
 
+    int number;
+    cout << "Input the size of the array to sort: ";
+    cin >> number;
 
-void multiplyBy (int *var, int amount)// *var = &a
-{
-*var *= amount;
+    int * customArray = createArray(number);
+    fillArrayWithValues(customArray, number);
+    printArrayValues(customArray, number);
 
-}
-*/
-/*
-int *multiplyBy (int *, int); //
+    bool selection;
+    cout << "Sort Ascending - 1, Descending - 0: ";
+    cin >> selection;
 
-int main() {
+    char sortSelection;
+    cout << "Bubble Sort or Selection Sort? B or S";
+    cin >> sortSelection;
 
-    int a = 10;
-    int *b = multiplyBy (&a, 5); // *b = var. Function returns the address
-   // *b = 100;
-    cout << a << endl;
-    cout << b << endl;
-
-
-
-    return 0;
-}
-
-
-int *multiplyBy (int *var, int amount)// *var = &a
-{
-*var *= amount;
-
-return var;
-
-}
-*/
-int *multiplyBy (int *, int); //
-void multiplyArrayBy (int *, int, int); // int * = &myArray[0]
-
-main (){
-
-    int myArray[10];
-    int arraySize = sizeof(myArray)/sizeof(myArray[0]);
-    cout << "arraySize is: " << arraySize << endl; // 10 * 4 bytes = 40 bytes
-
-
-    for (int i = 0; i < arraySize; i ++){
-        myArray[i] = i;
-        //cout << "myArray [" << i << "] = " << myArray[i] << endl;
+    if (sortSelection == 'S' || sortSelection == 's')
+        selectionSort(customArray, number, selection);
+    else if (sortSelection == 'B' || sortSelection == 'b')
+        bubbleSort (customArray, number, selection);
+    else {
+        cout << "Default method selected";
+        bubbleSort (customArray, number, selection);
     }
 
-    multiplyArrayBy (myArray, 5, arraySize);
+    selectionSort(customArray, number, selection);
 
-    for (int i = 0; i < arraySize; i ++){
-        cout << "myArray [" << i << "] = " <<myArray[i] << endl;
-    }
+    delete []customArray;
 
     return 0;
 }
 
+int *createArray (int number){
 
-int *multiplyBy (int *var, int amount)// *var = &a
-{
-*var *= amount;
-return var;
+    int* customArray = new int[number];
+
+    return customArray;
 }
 
-void multiplyArrayBy (int *myArray, int amount, int arraySize){
-    while (--arraySize)
-        cout << arraySize << endl;
-        myArray[arraySize] *= amount;
+void swapTwoValues (int *firstValue, int *secondValue){
+    int temp;
+
+    temp = *firstValue;
+    *secondValue = *firstValue;
+    *secondValue = temp;
+}
+
+void fillArrayWithValues (int arrayToFill[], int arraySize){
+    for (int i = 0; i < arraySize; i++){
+        cout << "Enter " << i+1 << " element: ";
+        cin >> arrayToFill[i];
+    }
+    system("cls");
+}
+
+void printArrayValues (int customArray[], int arraySize){
+    for (int i = 0; i < arraySize; i++){
+        cout << customArray[i] << endl;
+    }
+
+}
+
+void bubbleSort (int arrayToSort[], int size_of_arrayToSort, bool sortDirection){ // direction: ascending->1; descending->0
+    for (int i = 0; i < size_of_arrayToSort-1; i++)
+    {
+        for (int j = 0; j < size_of_arrayToSort-1; j++)
+        {
+            if (sortDirection == 1 && arrayToSort[j] > arrayToSort[j+1])
+            {
+                    swapTwoValues(arrayToSort+j, arrayToSort+j+1);
+            }
+            else if (sortDirection == 0 && arrayToSort[j] < arrayToSort[j+1])
+            {
+                    swapTwoValues(arrayToSort+j, arrayToSort+j+1);
+            }
+        }
+    }
+    printArrayValues (arrayToSort , size_of_arrayToSort);
+}
+
+
+void selectionSort (int arrayToSort[], int size_of_arrayToSort, bool sortDirection){ // direction: ascending->1; descending->0
+    int limitIndex;
+    for (int i = 0; i < size_of_arrayToSort; i++)
+    {
+        limitIndex = i;
+        for (int j = i + 1; j < size_of_arrayToSort; j++)
+        {
+            if (sortDirection == 1 && arrayToSort[j] < arrayToSort[limitIndex])
+            {
+                limitIndex = j;
+            }
+            else if (sortDirection == 0 && arrayToSort[j] > arrayToSort[limitIndex])
+            {
+                limitIndex = j;
+            }
+        }
+        swapTwoValues(arrayToSort+i, arrayToSort+limitIndex);
+    }
+    printArrayValues(arrayToSort, size_of_arrayToSort);
+
 
 }
