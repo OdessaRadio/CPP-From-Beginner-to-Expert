@@ -3,67 +3,60 @@ using namespace std;
 /*POINTERS are ordinary variables that store another address variable*/
 
 
-int main ()
+int main()
 {
-    int var = 5;
-    int a = 20;
-    int var2 = 100;
+    int  a[3];
+    a[0] = 0;
+    a[1] = 20;
+    a[2] = 40;
 
-    cout << "var: " << var << endl;
+    short int zm;
+    int * const p = &a[0];
 
-    int * const p = &var;; //pointer. * is used to indicate to compiler that *p is a pointer
-                            // const means that we can't change the address in the pointer
-    //cout << p << endl;
+    int var = 12;
 
-    //to get value by address
-
-    cout << "p = " << p << endl; // returning the address of the var variable
-    cout << "&p = " << &p << endl; //returning the address of the pointer variable
-    cout << "*p = " << *p << endl; //returning the value of variable which addressed is stored in the pointer variable
-
-    *p = 20; // changing the variable var by address
-    cout << "var: " << var << endl;
-
-    //p = &a; // changing the pointer address
-    //cout << "*p = " << *p << endl; //returning the value of variable which addressed is stored in the pointer variable
-
-
-    cout << "=========================\n";
-    // var2 = 100, a = 20
-    int * const p_const = &a; //can't change the address in the pointer but you can change the variable by address
-    const int * p_2 = &a; //pointer can't change the value of the variable which address is stored in pointer but can change the address
-
-    cout << "a = " << a << endl;
-    cout << "p_const = " << p_const << endl;
-    cout << "p_2 = " << p_2 << endl;
-
-    *p_const = var2;
-
-    cout << "a = " << a << endl;
-    cout << "p_const = " << p_const << endl;
-    cout << "p_2 = " << p_2 << endl;
-    cout << "*p_const = " << *p_const << endl;
-    cout << "*p_2 = " << *p_2 << endl;
-
-
-    const int * const point_1 = &a; // this is the pointer that can't change the variable and the address can't be changed
-
+    cout << p << endl;
+    cout << a << endl;
+    cout << &a[0] << endl;
+    cout << &a[1] << endl;
+    cout << &a[2] << endl;
 
     cout << "============" << endl;
 
-    int ordinary_var = 10;
-    int * ordinary_p = &ordinary_var;
+    cout << *a << endl;
+    cout << a+1 << endl; //+1 move by one data type definition
+    cout << a+2 << endl;
+    cout << a+10 << endl;
 
-    cout << "ordinary_var = " << ordinary_var << endl;
-    cout << "ordinary_p = " << ordinary_p << endl;
-    cout << "*ordinary_p = " << *ordinary_p << endl;
-    cout << "&ordinary_p = " << &ordinary_p << endl;
+    cout << "============" << endl;
 
+    cout << *a << endl;
+    cout << *(a+1) << endl; //+1 move by one data type definition
+    cout << *(a+2) << endl;
+    cout << *(a+10) << endl;
 
-    int ** pointer_pointing_to_address_of_pointer = &ordinary_p;
-    cout << "pointer_pointing_to_address_of_pointer" << pointer_pointing_to_address_of_pointer << endl;
+    cout << "============" << endl;
 
+    int *p_2 = a;
 
+    cout << *p_2 << endl; // a[0] = 0
+    cout << "p_2 = " << p_2 << endl;
+
+    cout << ++*p_2 << endl; // ++a[0] = 1
+    cout << "p_2 = " << p_2 << endl;
+
+    cout << *++p_2 << endl; // *a[0+1] = 20
+    cout << "p_2 = " << p_2 << endl;
+
+    cout << *p_2++ << endl; //
+    cout << "p_2 = " << p_2 << endl;
+
+    cout << *p_2 << endl; // a[0] = 0
+    cout << "p_2 = " << p_2 << endl;
 
     return 0;
 }
+
+
+
+
