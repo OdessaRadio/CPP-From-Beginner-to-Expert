@@ -1,58 +1,98 @@
 #include <iostream>
 using namespace std;
-/*POINTERS are ordinary variables that store another address variable*/
+/*Dynamic allocation of memory*/
 
 
 int main()
 {
-    int  a[3];
-    a[0] = 0;
-    a[1] = 20;
-    a[2] = 40;
+    /*
+    int array[100];
+    int * p_1 = &array[0];
+    array[0] = 99;
+    array[100] = 88;
+    cout << *p_1 << endl;
+    cout << *(p_1 + 100) << endl;
+    */
+/*
+    int amount;
 
-    short int zm;
-    int * const p = &a[0];
+    cout << "How many numbers would you like to store in the memory? " << endl;
+    cin >> amount;
 
-    int var = 12;
+    int *p = new (nothrow) int[amount]; // pointer to the first element of array
+
+    if (p!=NULL){
 
     cout << p << endl;
-    cout << a << endl;
-    cout << &a[0] << endl;
-    cout << &a[1] << endl;
-    cout << &a[2] << endl;
 
-    cout << "============" << endl;
+        for(int i = 0; i < amount-1; i ++){
+            cout << p[i] << endl;
+        }
+    }
+    else
+        cout << "Too many memory"<< endl;
 
-    cout << *a << endl;
-    cout << a+1 << endl; //+1 move by one data type definition
-    cout << a+2 << endl;
-    cout << a+10 << endl;
+    int y = 0;
+    for(int i = 0; i < amount; i ++){
+        y = i;
+        cout << "i = " << i << " y = " << y << endl;
+        cout << "Enter the " << (y+1) << " number :";
+        cin >> p[i];
+    }
 
-    cout << "============" << endl;
+    for(int i = 0; i < amount; i ++){
+        cout << "p[" << i << "] = " << p[i] << endl;
+    }
 
-    cout << *a << endl;
-    cout << *(a+1) << endl; //+1 move by one data type definition
-    cout << *(a+2) << endl;
-    cout << *(a+10) << endl;
+    delete p;
+*/
 
-    cout << "============" << endl;
 
-    int *p_2 = a;
+//    cout << new int << endl; // new int - is an address
+//    cout << *(new int) << endl;
 
-    cout << *p_2 << endl; // a[0] = 0
-    cout << "p_2 = " << p_2 << endl;
+/*
+    int var = 250;
 
-    cout << ++*p_2 << endl; // ++a[0] = 1
-    cout << "p_2 = " << p_2 << endl;
 
-    cout << *++p_2 << endl; // *a[0+1] = 20
-    cout << "p_2 = " << p_2 << endl;
+    {
+    int *p = new int;
 
-    cout << *p_2++ << endl; //
-    cout << "p_2 = " << p_2 << endl;
+    *p = 50;
 
-    cout << *p_2 << endl; // a[0] = 0
-    cout << "p_2 = " << p_2 << endl;
+    cout << "*p = " << *p << endl;
+    cout << "p = " << p << endl;
+
+    delete p; // delete - releasing the pointer. Deleting variable address from the pointer
+    p = NULL;
+
+    p = &var;
+
+    *p = 300;
+
+    if (p!=NULL)
+        {
+            *p = 100;
+            cout << *p << endl;
+        }
+
+    cout << "*p = " << *p << endl;
+    cout << "p = " << p << endl;
+    }
+
+
+    //array[0] = 500;
+
+    cout << "var" << endl;
+    cout << var << endl;
+*/
+    int *p = new int; // address reservation
+    cout << p << endl;
+    delete p;
+
+    p = new int; // address reservation
+    cout << p << endl;
+    delete p;
 
     return 0;
 }
