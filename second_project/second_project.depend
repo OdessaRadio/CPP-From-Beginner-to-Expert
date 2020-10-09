@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1602230111 source:d:\git_repositories\cpp-from-beginner-to-expert\second_project\main.cpp
+	<iostream>
+	"second_lib.h"
+
+1602242303 d:\git_repositories\cpp-from-beginner-to-expert\second_project\second_lib.h
+
+1602230122 source:d:\git_repositories\cpp-from-beginner-to-expert\second_project\second_lib.cpp
+	<iostream>
+
