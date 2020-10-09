@@ -7,6 +7,7 @@ void showhelp();
 
 int main(int argc, char *argv[]) //argc - how many parameters are on the command stream
 {
+
     cout << argc << endl;
     for (int i =0; i < argc; i++){
         if ((strcmp(argv[i], "-h") == 0)&& i == 1){ // checking for -h string and position 1 in the stream

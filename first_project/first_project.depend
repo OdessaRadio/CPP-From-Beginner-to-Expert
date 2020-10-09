@@ -1,4 +1,5 @@
 # depslib dependency file v1.0
-1602222342 source:d:\git_repositories\cpp-from-beginner-to-expert\first_project\main.cpp
+1602228699 source:d:\git_repositories\cpp-from-beginner-to-expert\first_project\main.cpp
 	<iostream>
+	<string.h>
 
