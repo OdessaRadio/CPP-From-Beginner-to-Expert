@@ -3,7 +3,7 @@
 
 using namespace std;
 
-/* function template generalization*/
+/* class templates */
 
 void operationOnPoints();
 
@@ -22,7 +22,7 @@ Point2D add(Point2D var1, Point2D var2){
     return tmp;
 }
 */
-
+typedef Point<int> PointInt;
 
 int main()
 {
@@ -36,13 +36,11 @@ int main()
 
 
 void operationOnPoints(){
-    Point2D p1(10,67);
-    Point2D p2(50,3);
+    //Point2D<double> b(10.5, 6);
+    //cout << b.getX() << endl;
 
-    Point2D sum = add(p1,p2);
-
-    cout << sum.getX() << endl;
-    cout << sum.getY() << endl;
+    Point<char> b(49);
+    cout << b.getX() << endl;
 
 }
 

@@ -1,6 +1,6 @@
 #include <iostream>
 #include "point.h"
-
+/*
 using namespace std;
 
 Point::Point(int x)
@@ -60,3 +60,4 @@ Point2D Point2D::operator+(Point2D o){
     return tmp;
 
 }
+*/
