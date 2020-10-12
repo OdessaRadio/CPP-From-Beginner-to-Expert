@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1602488361 source:d:\git_repositories\cpp-from-beginner-to-expert\oop\friend_classes\friend_classes\test.cpp
+	<iostream>
+	"test.h"
+
+1602488462 d:\git_repositories\cpp-from-beginner-to-expert\oop\friend_classes\friend_classes\test.h
+
+1602486332 source:d:\git_repositories\cpp-from-beginner-to-expert\oop\friend_classes\friend_classes\main.cpp
+	<iostream>
+	"test.h"
+
