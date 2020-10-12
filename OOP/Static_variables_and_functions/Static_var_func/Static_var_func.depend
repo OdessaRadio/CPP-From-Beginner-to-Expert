@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1602482670 source:d:\git_repositories\cpp-from-beginner-to-expert\oop\static_variables_and_functions\static_var_func\main.cpp
+	<iostream>
+	"user.h"
+
+1602483204 d:\git_repositories\cpp-from-beginner-to-expert\oop\static_variables_and_functions\static_var_func\user.h
+
+1602482894 source:d:\git_repositories\cpp-from-beginner-to-expert\oop\static_variables_and_functions\static_var_func\user.cpp
+	<iostream>
+	"user.h"
+

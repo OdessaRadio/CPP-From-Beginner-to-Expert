@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1602504903 source:d:\git_repositories\cpp-from-beginner-to-expert\oop\polymorphism_virtual_functions_abstract_classes\polymorphism\farm.cpp
+	"farm.h"
+
+1602505070 d:\git_repositories\cpp-from-beginner-to-expert\oop\polymorphism_virtual_functions_abstract_classes\polymorphism\farm.h
+	<iostream>
+
+1602505013 source:d:\git_repositories\cpp-from-beginner-to-expert\oop\polymorphism_virtual_functions_abstract_classes\polymorphism\main.cpp
+	<iostream>
+	"farm.h"
+

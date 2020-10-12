@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1602507450 source:d:\git_repositories\cpp-from-beginner-to-expert\oop\inheritance_between_classes\inheritance\main.cpp
+	<iostream>
+	"point.h"
+
+1602508805 d:\git_repositories\cpp-from-beginner-to-expert\oop\inheritance_between_classes\inheritance\point.h
+	<iostream>
+
+1602507512 source:d:\git_repositories\cpp-from-beginner-to-expert\oop\inheritance_between_classes\inheritance\point.cpp
+	<iostream>
+	"point.h"
+

@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1602489956 source:d:\git_repositories\cpp-from-beginner-to-expert\oop\copy constructor\copy_constructor\copy.cpp
+	"copy.h"
+
+1602489956 d:\git_repositories\cpp-from-beginner-to-expert\oop\copy constructor\copy_constructor\copy.h
+
+1602489772 source:d:\git_repositories\cpp-from-beginner-to-expert\oop\copy constructor\copy_constructor\main.cpp
+	<iostream>
+	"copy.h"
+
