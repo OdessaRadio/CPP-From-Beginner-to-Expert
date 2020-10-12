@@ -3,11 +3,17 @@
 
 using namespace std;
 
+/*friend function*/
+
+void setX(Position &, int); // we need to send reference to the object.
+
 int main()
 {
     Position dog(10, 50);
     dog.getPosition();
     dog.setPosition(20,30);
+    dog.getPosition();
+    setX (dog, 1600);
     dog.getPosition();
 
     cout << endl;
@@ -18,4 +24,12 @@ int main()
     //house.getPosition();
 
     return 0;
+}
+
+void setX (Position & obj, int value){
+
+    //obj.x - will be a copy of dog
+    obj.x = value;
+
+
 }
