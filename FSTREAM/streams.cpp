@@ -6,33 +6,39 @@ using namespace std;
 int main()
 {
     /*
-        tellp - tell put - tells where is the putting pointer
-        seekp - seek put - sets writing (putting) pointer at specified position
+        getline(where to store the extracted characters, how many characters should be taken unless, seperator(delimiter)) - extracts seperators and delete it
+        get(where to store the extracted characters, how many characters should be taken unlles, seperator(delimiter)) - doesn't extract seperator
+        ignore(how_many_characters_to_extracte AND TO IGNORE THEM, seperator) - extracts characters
 
-
-        seekp(how_many_bytes_from_the_flag_place, flag);
-
-        possible flags:
-        ios::beg - (begin) set from the begin (default)
-        ios::end - set from the end
-        ios::cur - (current) set from current place
+        get();
     */
 
     fstream file;
 
-    file.open("sample.txt", ios::out | ios::binary);
+    file.open("sample.txt", ios::in | ios::binary);
 
     if (file.is_open())
     {
-        string tmp = "this is text about nothing";
+        char first, second;
+        char buffer[50];
 
-        file << tmp;
+        cin >> buffer;
 
-        cout << file.tellp() << endl;
+        cout << buffer << endl;
+        do
+        {
+            file.getline(buffer, 50, ' '); // get first 50 bytes or unless we meed separator " "
 
-        file.seekp(0, ios::beg);
+            second = file.get();
 
-        file << "T";
+            file.ignore(40, '\n');
+
+            cout << buffer << " " << second << ". " << endl;
+
+        } while(!file.eof());
+
+
+
     }
     else
         cout << "The file couldn't be opened properly" << endl;
