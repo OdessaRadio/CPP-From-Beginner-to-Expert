@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1602494123 source:d:\git_repositories\cpp-from-beginner-to-expert\oop\convert_constructor\convert_constructor\integer.cpp
+	"integer.h"
+
+1602494215 d:\git_repositories\cpp-from-beginner-to-expert\oop\convert_constructor\convert_constructor\integer.h
+
+1602492341 source:d:\git_repositories\cpp-from-beginner-to-expert\oop\convert_constructor\convert_constructor\main.cpp
+	<iostream>
+	"integer.h"
+
