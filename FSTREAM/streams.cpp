@@ -1,4 +1,3 @@
-
 #include <fstream>
 #include <iostream>
 
@@ -8,33 +7,39 @@ using namespace std;
 
 int main()
 {
-    fstream file;
-
-    file.open("sample.txt", ios::out | ios::ate | ios::app);
-
-     /*
-        ios::in - INPUT - READING
-        ios::out - OUTPUT - WRITE TO FILE. If there is no file then create
-                                        If there is a file remove content
-        ios::trunc - TRUNCATE - cutting everything
-        ios::ate - At The End - sets the pointer to the end of file
-        ios::app - Append - content added to thwe end of the file. It is not possible to remove content
-        ios::binary - opens file as a binary file
-    */
-
-    if (file.is_open())
-    {
-        file << "sample text\n";
-        file << "sample text\n";
 
     /*
-        DEFAULT MODE (FLAGS)
-        fstream -  ios::out | ios::in
-        ifstream - ios::in
-        ofstream - ios::out
+        bad() - badbit
+        clear() - clear the state
+        fail() - situation when we try to assign the intiger for the wrong type + bad bit
+        good() - if everything is ok
+        rdstate() - reading the state file
+        eof() - end of file bit. Returns true if the file opened to read reached the end of file
     */
 
+    fstream file;
 
+    file.open("sample.txt", ios::in);
+    if (file.is_open())
+    {
+        string buffer;
+
+        do
+        {
+            file >> buffer;
+            cout << buffer;
+        } while (!file.eof());
+
+        cout << endl;
+
+
+        if( (file.rdstate() ^ ifstream::eofbit) == 0 )
+        {
+            cout << "error\n";
+            file.clear();
+        }
+
+        cout << file.rdstate() << endl;
     }
     else
         cout << "The file can't be opened properly";
