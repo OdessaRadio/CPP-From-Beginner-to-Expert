@@ -6,7 +6,7 @@ using namespace std;
 
 
 void test (){
-    //personalData person [6];
+    //personalData person [5];
     PersonalData *pointer = new PersonalData[5];
 
     delete [] pointer;
@@ -24,11 +24,13 @@ int main()
 //    person1.setAge (1000);
 //    person2.setAge (30);
 
-
+    //person3.setName ("Sasha");
 
     cout << person1.getName() << endl;
     cout << person1.getAge() << endl;
     cout << person2.getAge() << endl;
     //cout << person2.name << endl;
+    cout << person3.getName() << endl;
+
     return 0;
 } // calling destructor

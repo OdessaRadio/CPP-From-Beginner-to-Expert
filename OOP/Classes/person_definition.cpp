@@ -6,7 +6,7 @@ using namespace std;
 void PersonalData::setAge (int age) {  // :: - scope operator
     cout << age << endl;
     if (age < 0)
-        this -> age = 0; // this is address to instance of class that we are working on right now
+        this -> age = 0; // "this" is address to instance of class that we are working with right now
     else
         this -> age = age;
 }
@@ -21,6 +21,7 @@ PersonalData::PersonalData() {
     i++;
     cout << "This constructor has been just invoked " << i << endl;
     age = 10; // if not specified by default
+    name = "Oleksii"; // Set name by default if person . name is not specified
     p = new int [5]; // dynamically reserved memory
 }
 
