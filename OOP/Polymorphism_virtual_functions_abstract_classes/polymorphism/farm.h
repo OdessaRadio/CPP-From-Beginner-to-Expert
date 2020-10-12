@@ -13,7 +13,7 @@ class Animal
 
     public:
         Animal();
-        ~Animal();
+        virtual ~Animal(); // virtual destructor
         virtual string getVoice() = 0; // we made the class abstract
         /*
         virtual string getVoice() {return voice ;}

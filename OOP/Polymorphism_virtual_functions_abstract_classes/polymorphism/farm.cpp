@@ -7,7 +7,7 @@ Animal::Animal()
 
 Animal::~Animal()
 {
-
+    cout << "Animal class destructor" << endl;
 }
 
 //
@@ -19,7 +19,7 @@ Dog::Dog()
 
 Dog::~Dog()
 {
-
+    cout << "Dog class destructor" << endl;
 }
 
 //
@@ -31,7 +31,7 @@ Cat::Cat()
 
 Cat::~Cat()
 {
-
+    cout << "Cat class destructor" << endl;
 }
 
 //
@@ -43,5 +43,5 @@ Cow::Cow()
 
 Cow::~Cow()
 {
-
+    cout << "Cow class destructor" << endl;
 }
