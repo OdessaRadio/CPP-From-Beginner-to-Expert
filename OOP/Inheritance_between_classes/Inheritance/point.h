@@ -27,7 +27,7 @@ class Point2D : public Point // inherit the public section of the class Point
         void setY (int);
         void setX(int);
         void setXY(int,int);
-
+        Point2D operator+(Point2D);
 
 };
 
